@@ -50,7 +50,7 @@ class BlueprintCategory extends Part
 
     public function getObject()
     {
-        $where = empty($this->uuid) ? ['name' => $this->name] : ['uuid' => $this->uuid];
+        $where = empty($this->uuid) ? ['name' => $this->name, 'theme' => $this->config->fred->getThemeId()] : ['uuid' => $this->uuid];
 
         $obj = $this->config->modx->getObject('\\Fred\\Model\\FredBlueprintCategory', $where);
 

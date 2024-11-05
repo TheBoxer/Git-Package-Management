@@ -123,7 +123,7 @@ class Element extends Part
 
     public function getObject()
     {
-        $where = empty($this->uuid) ? ['name' => $this->name] : ['uuid' => $this->uuid];
+        $where = empty($this->uuid) ? ['name' => $this->name, 'category' => $this->config->fred->getElementCategoryId($this->category)] : ['uuid' => $this->uuid];
 
         $obj = $this->config->modx->getObject('\\Fred\\Model\\FredElement', $where);
 
