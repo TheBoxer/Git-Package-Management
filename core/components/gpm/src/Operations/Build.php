@@ -531,7 +531,7 @@ class Build extends Operation {
 
             $templateVars = $this->getElements('templateVar', $catPath);
             if (!empty($templateVars)) {
-                $category->addMany($templateVars, 'templateVar');
+                $category->addMany($templateVars, 'TemplateVars');
             }
 
             $propertySets = $this->getPropertySets($catPath);
