@@ -52,4 +52,13 @@ class Template extends Part
 
         return $obj;
     }
+
+    public function deleteObject()
+    {
+        $obj = $this->config->modx->getObject('\\Fred\\Model\\FredThemedTemplate', ['template' => $this->config->fred->getTemplateId($this->name), 'theme' => $this->config->fred->getThemeId()]);
+
+        if ($obj !== null) {
+            $obj->remove();
+        }
+    }
 }
