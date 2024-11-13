@@ -529,6 +529,11 @@ class Build extends Operation {
                 $category->addMany($templates, 'Templates');
             }
 
+            $templateVars = $this->getElements('templateVar', $catPath);
+            if (!empty($templateVars)) {
+                $category->addMany($templateVars, 'templateVar');
+            }
+
             $propertySets = $this->getPropertySets($catPath);
             if (!empty($propertySets)) {
                 $category->addMany($propertySets, 'PropertySets');
